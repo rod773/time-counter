@@ -48,11 +48,15 @@ export class Counter extends Component {
     }
   };
 
+  renderStop = () => {
+    return <img src={images.stop} alt="stop" className="w-[100px]"></img>;
+  };
+
   render() {
     return (
       <div className="h-screen flex flex-col items-center justify-center">
         <h1 className="text-xl font-bold">Counter</h1>
-        <h2 className="text-xl font-semibold">{this.state.count}</h2>
+        <h2 className="text-2xl font-bold">{this.state.count}</h2>
         <h2 className="text-xl font-semibold">{this.state.milisec}</h2>
         <div className="flex justify-center items-center">
           <button
@@ -64,12 +68,12 @@ export class Counter extends Component {
             <this.renderButtonImg />
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  mx-4 h-[50px]"
+            className=" mx-4 "
             onClick={() => {
               this.setState({ count: 0, milisec: 0 });
             }}
           >
-            reset
+            <this.renderStop />
           </button>
         </div>
 
