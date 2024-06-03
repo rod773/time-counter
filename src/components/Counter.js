@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { images } from "assets";
 
 export class Counter extends Component {
   state = {
