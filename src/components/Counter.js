@@ -34,7 +34,9 @@ export class Counter extends Component {
   }
 
   renderPlay = () => {
-    return <img src={images.play} alt="play" className="w-[100px]" />;
+    if (this.state.start)
+      return <img src={images.pause} alt="pause" className="w-[100px]" />;
+    else return <img src={images.play} alt="play" className="w-[100px]" />;
   };
 
   render() {
