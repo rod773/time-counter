@@ -33,6 +33,10 @@ export class Counter extends Component {
     this.startTimer();
   }
 
+  renderPlay = () => {
+    return <img src={images.play} alt="play" className="w-[100px]" />;
+  };
+
   render() {
     return (
       <div className="h-screen flex flex-col items-center justify-center">
@@ -46,11 +50,7 @@ export class Counter extends Component {
               this.setState({ start: !this.state.start });
             }}
           >
-            <img
-              src={this.state.start ? images.pause : images.play}
-              alt="play"
-              className="w-[100px]"
-            />
+            <this.renderPlay />
           </button>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  mx-4 h-[50px]"
