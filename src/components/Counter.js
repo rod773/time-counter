@@ -46,7 +46,11 @@ export class Counter extends Component {
               this.setState({ start: !this.state.start });
             }}
           >
-            <img src={images.play} alt="play" className="w-[100px]" />
+            <img
+              src={this.state.start ? images.pause : images.play}
+              alt="play"
+              className="w-[100px]"
+            />
           </button>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  mx-4 h-[50px]"
