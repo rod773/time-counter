@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import { images } from "assets";
 
 export class Counter extends Component {
+  offset = new Date().getTimezoneOffset() / 2;
+
   state = {
     horaInicio: 0,
     horaFin: 0,
     total: 0,
     start: false,
-    count: "",
+    count: new Date(this.offset * 60000).toLocaleTimeString("en-GB"),
     milisec: 0,
     inicio: 0,
   };
-
-  offset = new Date().getTimezoneOffset() / 2;
 
   startTimer = () => {
     if (this.state.milisec === 0)
@@ -72,7 +72,12 @@ export class Counter extends Component {
           <button
             className=" mx-4 "
             onClick={() => {
-              this.setState({ count: "", milisec: 0 });
+              this.setState({
+                count: new Date(this.offset * 60000).toLocaleTimeString(
+                  "en-GB"
+                ),
+                milisec: 0,
+              });
             }}
           >
             <this.renderStop />
