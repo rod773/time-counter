@@ -49,7 +49,9 @@ export class Counter extends Component {
   };
 
   renderStop = () => {
-    return <img src={images.stop} alt="stop" className="w-[100px]"></img>;
+    if (!this.state.start && this.state.milisec > 0) {
+      return <img src={images.stop} alt="stop" className="w-[100px]"></img>;
+    }
   };
 
   render() {
@@ -70,7 +72,7 @@ export class Counter extends Component {
           <button
             className=" mx-4 "
             onClick={() => {
-              this.setState({ count: 0, milisec: 0 });
+              this.setState({ count: "", milisec: 0 });
             }}
           >
             <this.renderStop />
