@@ -33,7 +33,7 @@ export class Counter extends Component {
     this.startTimer();
   }
 
-  renderPlay = () => {
+  renderButtonImg = () => {
     if (this.state.start)
       return <img src={images.pause} alt="pause" className="w-[100px]" />;
     else return <img src={images.play} alt="play" className="w-[100px]" />;
@@ -52,7 +52,7 @@ export class Counter extends Component {
               this.setState({ start: !this.state.start });
             }}
           >
-            <this.renderPlay />
+            <this.renderButtonImg />
           </button>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  mx-4 h-[50px]"
