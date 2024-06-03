@@ -39,17 +39,17 @@ export class Counter extends Component {
         <h1 className="text-xl font-bold">Counter</h1>
         <h2 className="text-xl font-semibold">{this.state.count}</h2>
         <h2 className="text-xl font-semibold">{this.state.milisec}</h2>
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  mx-4"
+            className="mx-4"
             onClick={() => {
               this.setState({ start: !this.state.start });
             }}
           >
-            start
+            <img src={images.play} alt="play" className="w-[100px]" />
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  mx-4"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  mx-4 h-[50px]"
             onClick={() => {
               this.setState({ count: 0, milisec: 0 });
             }}
