@@ -33,11 +33,15 @@ export class Counter extends Component {
     this.startTimer();
   }
 
+  componentDidUpdate() {
+    //console.log(this.state);
+  }
+
   renderButtonImg = () => {
     if (this.state.start) {
       return <img src={images.pause} alt="pause" className="w-[100px]" />;
     } else {
-      if (this.state.count === 0)
+      if (this.state.milisec === 0)
         return <img src={images.play} alt="play" className="w-[100px]" />;
       else
         return (
