@@ -34,9 +34,18 @@ export class Counter extends Component {
   }
 
   renderButtonImg = () => {
-    if (this.state.start)
+    if (this.state.start) {
       return <img src={images.pause} alt="pause" className="w-[100px]" />;
-    else return <img src={images.play} alt="play" className="w-[100px]" />;
+    } else {
+      if (this.state.count === 0)
+        return <img src={images.play} alt="play" className="w-[100px]" />;
+      else
+        return (
+          <>
+            <img src={images.reload} alt="reload" className="w-[100px]" />
+          </>
+        );
+    }
   };
 
   render() {
