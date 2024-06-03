@@ -1,4 +1,4 @@
-import Counter from "Counter";
+import Counter from "components/Counter";
 import React from "react";
 
 function App() {
